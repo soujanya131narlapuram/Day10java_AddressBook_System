@@ -28,13 +28,14 @@ public class AddressBook {
         System.out.println("Welcome to AddressBook");
         Scanner sc=new Scanner(System.in);
         ArrayList<AddressBook> ads_book=new ArrayList<>();
-        int choice=5;
+        int choice=5;String searchName=null;
         while (choice != 0) {
             System.out.println("Select one of the below options");
             System.out.println(" 0. Exit. ");
             System.out.println(" 1. Add contact. ");
             System.out.println(" 2. Edit contact. ");
-            System.out.println(" 3. Display contacts. ");
+            System.out.println(" 3. Delete contact. ");
+            System.out.println(" 4. Display contacts. ");
             choice = sc.nextInt();
             sc.nextLine();
             switch (choice) {
@@ -60,7 +61,7 @@ public class AddressBook {
                     break;
                 case 2:
                     System.out.println("Enter name you want to edit");
-                    String searchName = sc.nextLine();
+                    searchName = sc.nextLine();
                     System.out.println("Enter new name ");
                     String newName = sc.nextLine();
                     for (int i = 0; i < ads_book.size(); i++) {
@@ -72,6 +73,15 @@ public class AddressBook {
                     }
                     break;
                 case 3:
+                    System.out.println("Enter name you want to delete");
+                    searchName = sc.nextLine();
+                    for (int i = 0; i < ads_book.size(); i++) {
+                        if (ads_book.get(i).firstName.equals(searchName)) {
+                            ads_book.remove(i);
+                        }
+                    }
+                    break;
+                case 4:
                     System.out.println("Showing All the contacts from the AddressBook");
                     for (int index = 0; index < ads_book.size(); index++) {
                         ads_book.get(index).display();
