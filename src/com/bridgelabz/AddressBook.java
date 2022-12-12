@@ -1,8 +1,7 @@
 package com.bridgelabz;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class AddressBook {
-
+    public class AddressBook {
         public String firstName;
         public String lastName;
         public String address;
@@ -20,15 +19,14 @@ public class AddressBook {
             this.zipCode = zipcode;
             this.phoneNumber = phonenumber;
             this.gmail = gmail;
-            AddressBook(String  ads_bk_name){
-                this.address_book_name=ads_bk_name;
-            }
-            public void display(){
-                System.out.println("AddressBookName:"+address_book_name+" firstName:"+firstName+" "+
-                        "lastName:" + lastName +"  "+ "address:" +address +" "+"city:" +city +" "+
-                        "zipCode:"+zipCode+  " " +"phoneNumber:"+phoneNumber +" gmail:"  +gmail);
-            }
         }
+        public AddressBook(String ads_bk_name){
+            this.address_book_name=ads_bk_name;
         }
-
+        public void display(){
+            System.out.println("AddressBookName:"+address_book_name+" firstName:"+firstName+" "+
+                    "lastName:" + lastName +"  "+ "address:" +address +" "+"city:" +city +" "+
+                    "zipCode:"+zipCode+  " " +"phoneNumber:"+phoneNumber +" gmail:"  +gmail);
+        }
+    }
 
